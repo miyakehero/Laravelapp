@@ -9,11 +9,8 @@
 </head>
 <body>
   <h1> Laravel </h1>
-  <h2>
-    <a href={{ route('login') }}> login <a>
-    <a href={{ route('register') }}> register <a>
-    <hr>
-  </h2>
+  <h2> @yield('login_menu') </h2>
+  <hr>
   <h3> @yield('title') </h3>
   <h2> @yield('content') </h2>
 </body>

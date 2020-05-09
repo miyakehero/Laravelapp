@@ -2,6 +2,11 @@
 
 @section('title', 'Login')
 
+@section('login_menu')
+  <a href={{ route('login') }}> login <a>
+  <a href={{ route('register') }}> register <a>
+@endsection
+
 @section('content')
 <form action = {{ route('login') }} method = "post">
   @csrf
