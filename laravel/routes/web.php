@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('login', 'LoginController@index')->name('login.index');
 Route::post('login', 'LoginController@post')->name('login.post');
 Route::get('register', 'RegisterController@index')->name('register.index');
-Route::post('home', 'RegisterController@post')->name('home.post');
+Route::post('register', 'RegisterController@post')->name('register.post');

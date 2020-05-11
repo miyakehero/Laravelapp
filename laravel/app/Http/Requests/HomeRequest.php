@@ -8,7 +8,7 @@ class HomeRequest extends FormRequest
 {
     public function authorize()
     {
-        if ($this->path() == 'home')
+        if ($this->path() == 'register')
         {
             return true;
         } else {

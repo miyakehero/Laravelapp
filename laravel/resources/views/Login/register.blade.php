@@ -11,7 +11,7 @@
 @if (count($errors) > 0)
   <p>入力に問題があります。</p>
 @endif
-<form action = {{ route('home.post') }} method = "post">
+<form action = {{ route('register.post') }} method = "post">
   @csrf
   @error('name')
     <tr><th>ERROR</th>
