@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('login', 'LoginController@index')->name('login');
-Route::post('login', 'LoginController@post')->name('login_post');
-Route::get('register', 'RegisterController@index')->name('register');
-Route::post('home', 'RegisterController@post')->name('home');
+Route::get('login', 'LoginController@index')->name('login.index');
+Route::post('login', 'LoginController@post')->name('login.post');
+Route::get('register', 'RegisterController@index')->name('register.index');
+Route::post('home', 'RegisterController@post')->name('home.post');

@@ -14,6 +14,7 @@ class RegisterController extends Controller
 	}
 	public function post(HomeRequest $request)
 	{
-		return view('Login.home', ['msg' => $request->name]); 
+		$username = $request->name;
+		return view('Login.home', compact('username')); 
 	}
 }

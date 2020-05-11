@@ -1,7 +1,7 @@
 @extends('layouts.loginapp')
 
 @section('login_menu')
-  <p>ユーザ名：{{$msg}}</p>
+  <p>ユーザ名：{{$username}}</p>
   <form action="post" method="post"></form>
     <button type="submit">Logout</button>
 @endsection

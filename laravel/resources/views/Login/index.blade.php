@@ -3,12 +3,12 @@
 @section('title', 'Login')
 
 @section('login_menu')
-  <a href={{ route('login') }}> login <a>
-  <a href={{ route('register') }}> register <a>
+  <a href={{ route('login.index') }}> login <a>
+  <a href={{ route('register.index') }}> register <a>
 @endsection
 
 @section('content')
-<form action = {{ route('login') }} method = "post">
+<form action = {{ route('login.post') }} method = "post">
   @csrf
   <p> E-Mail Address: <input type="text" name="email" size="10"> </p>
   <p> Password: <input type="password" name="pwd" size="10"> </p>

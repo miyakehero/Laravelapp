@@ -3,15 +3,15 @@
 @section('title', 'Register')
 
 @section('login_menu')
-  <a href={{ route('login') }}> login <a>
-  <a href={{ route('register') }}> register <a>
+  <a href={{ route('login.index') }}> login <a>
+  <a href={{ route('register.index') }}> register <a>
 @endsection
 
 @section('content')
 @if (count($errors) > 0)
   <p>入力に問題があります。</p>
 @endif
-<form action = {{ route('home') }} method = "post">
+<form action = {{ route('home.post') }} method = "post">
   @csrf
   @error('name')
     <tr><th>ERROR</th>
