@@ -17,3 +17,5 @@ Route::get('login', 'LoginController@index')->name('login.index');
 Route::post('login', 'LoginController@post')->name('login.post');
 Route::get('register', 'RegisterController@index')->name('register.index');
 Route::post('register', 'RegisterController@post')->name('register.post');
+Route::get('todolist', 'TodolistController@index')->name('todolist.index');
+Route::post('todolist', 'TodolistController@post')->name('todolist.post');
