@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Todolist extends Model
+{
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'comment' => 'required',
+    );
+}
