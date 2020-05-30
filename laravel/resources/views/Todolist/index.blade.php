@@ -12,10 +12,7 @@
         </tr>
       @endforeach
   </table>
-@endsection
-
-@section('comment')
-新規タスクの追加
+<p>新規タスクの追加</p>
 <form action = {{ route('todolist.post') }} method = "post">
   @csrf
   <p> <input type="text" name="comment" size="20"> <input type="submit" value="追加"></p>
