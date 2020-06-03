@@ -15,6 +15,7 @@ class CreateTodolistsTable extends Migration
     {
         Schema::create('todolists', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('person_id');
             $table->string('comment');
             $table->integer('status')->default(0); /* 0:作業中、1:完了 */
             $table->timestamps();
