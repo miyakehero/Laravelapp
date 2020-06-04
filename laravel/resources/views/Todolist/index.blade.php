@@ -5,14 +5,14 @@
     <tr><th>ID</th><th>コメント</th><th>状態</th></tr>
       @foreach ($items as $item)
         <tr>
-          <td>{{$item->person_id}}</td>
+          <td>{{$loop->iteration}}</td>
           <td>{{$item->comment}}</td>
           <td><input type="submit" value = "作業中"> </td>
           <td>
             <form action= {{ route('todolist.delete') }} method = "post">
             @csrf
             <td>
-              <input type="hidden" name="person_id" value={{$item->person_id}}>
+              <input type="hidden" name="id" value={{$item->id}}>
               <input type="submit" value = "削除">
              </td>
            </form>

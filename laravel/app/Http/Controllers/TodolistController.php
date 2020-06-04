@@ -20,18 +20,6 @@ class TodolistController extends Controller
 		$form = $request->all();
 		unset($form['_token']);
 
-		/* person_idを設定 */
-		$current_person = Todolist::orderBy('person_id', 'desc')->first();
-
-		if ( $current_person !== null)
-		{
-			$todolist->person_id = $current_person->person_id + 1;
-		}
-		else
-		{
-			$todolist->person_id = 0;
-		}
-
 		/* コメントを設定 */
 		$todolist->fill($form)->save();
 
@@ -40,17 +28,8 @@ class TodolistController extends Controller
 
 	public function delete(Request $request)
 	{
-		$set_person_id = 1;
-
 		/* DBからデータを「削除」 */
-		Todolist::where('person_id', $request->input('person_id'))->delete();
-
-		foreach(Todolist::all() as $person)
-		{
-			$person->person_id = $set_person_id;
-			$set_person_id++;
-			$person->save();
-		}
+		Todolist::where('id', $request->input('id'))->delete();
 
 		return redirect('/todolist');
 	}
