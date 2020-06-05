@@ -20,3 +20,4 @@ Route::post('register', 'RegisterController@post')->name('register.post');
 Route::get('todolist', 'TodolistController@index')->name('todolist.index');
 Route::post('todolist', 'TodolistController@post')->name('todolist.post');
 Route::post('todolist/delete', 'TodolistController@delete')->name('todolist.delete');
+Route::post('todolist/status', 'TodolistController@changeStatus')->name('todolist.status');

@@ -33,4 +33,24 @@ class TodolistController extends Controller
 
 		return redirect('/todolist');
 	}
+
+	public function changeStatus(Request $request)
+	{
+		$status = $request->input('status');
+
+		if($status === "0")
+		{
+			Todolist::find($request->input('id'))->update(['status' => '1']);
+		}
+		else if($status === "1")
+		{
+			Todolist::find($request->input('id'))->update(['status' => '0']);
+		}
+		else
+		{
+			/* Do Nothing */
+		}
+
+		return redirect('/todolist');
+	}
 }

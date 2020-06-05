@@ -7,7 +7,25 @@
         <tr>
           <td>{{$loop->iteration}}</td>
           <td>{{$item->comment}}</td>
-          <td><input type="submit" value = "作業中"> </td>
+          @if ($item->status == 0)
+            <form action= {{ route('todolist.status') }} method = "post">
+            @csrf
+              <td>
+                <input type="hidden" name="status" value="0"> 
+                <input type="hidden" name="id" value={{$item->id}}>
+                <input type="submit" value = "作業中">
+              </td>
+            </form>
+          @else
+            <form action= {{ route('todolist.status') }} method = "post">
+            @csrf
+              <td>
+                <input type="hidden" name="status" value="1">
+                <input type="hidden" name="id" value={{$item->id}}>
+                <input type="submit" value = "完了">
+              </td>
+            </form>
+          @endif
           <td>
             <form action= {{ route('todolist.delete') }} method = "post">
             @csrf
